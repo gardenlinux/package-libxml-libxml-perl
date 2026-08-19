@@ -1,0 +1,12 @@
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  build:
+    uses: gardenlinux/package-build/.github/workflows/build.yml@main
+    with:
+      release: ${{ github.ref == 'refs/heads/main' }}
+      build_dep: |
+        gardenlinux/package-perl 5.40.1-8+really5.42.3-1gl0+bp2150

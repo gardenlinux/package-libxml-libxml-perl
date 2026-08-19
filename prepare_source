@@ -1,0 +1,5 @@
+# check the build deps in the action
+
+apt_src libxml-libxml-perl
+
+version_suffix=gl0~bp2150
